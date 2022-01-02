@@ -1,0 +1,520 @@
+@charset "UTF-8";
+
+@media (max-width: 1024px) {
+  #top .straw {
+    transform-origin: top;
+    transform: scale(0.8, 0.8);
+  }
+
+  #top .tapi1,
+  .tapi9,
+  .tapi10,
+  .tapi17 {
+    display: none;
+  }
+
+  #introduce .introduceWrapper {
+    margin: 30px auto 20px auto;
+    padding: 60px;
+    width: 80%;
+    min-width: 384px;
+  }
+
+  #introduce h3 {
+    font-size: 24px;
+  }
+
+  #introduce p {
+    font-size: 16px;
+    line-height: 38px;
+    text-align: left;
+  }
+
+  #shoplist {
+    display: block;
+    width: 82%;
+    margin: 0 auto;
+  }
+
+  #shoplist .shop {
+    margin-bottom: 60px;
+  }
+
+  #shoplist .shop-heart1,
+  #shoplist .shop-heart2,
+  #shoplist .shop-heart3 {
+    display: none;
+  }
+
+  #shoplist .shop1 div {
+    visibility: visible;
+    color: #fff;
+    background: rgb(145, 203, 240);
+  }
+
+  #shoplist .shop2 div {
+    visibility: visible;
+    color: #fff;
+    background: rgb(255, 192, 203);
+  }
+
+  #shoplist .shop3 div {
+    visibility: visible;
+    color: #fff;
+    background: rgb(251, 217, 101);
+  }
+
+  #shoplist .shop-name {
+    text-decoration: underline;
+  }
+
+  #shopdetail .headline {
+    position: relative;
+    width: 82vw;
+    height: 32vw;
+    margin: 20px auto;
+    background-color: rgb(245, 245, 245);
+  }
+
+  #shopdetail .title {
+    position: absolute;
+    top: 5.5vw;
+    left: 7vw;
+  }
+
+  #shopdetail .loc {
+    width: 73px;
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding: 0px 8px;
+  }
+
+  #shopdetail .name {
+    line-height: 50px;
+    font-size: 40px;
+  }
+
+  #shopdetail .dots {
+    padding-top: 3vw;
+  }
+
+  .slick-dots li {
+    margin-right: 3vw;
+  }
+
+  .slick-dots li button:before {
+    font-size: 4vw;
+  }
+
+  #shopdetail .about .aboutWrapper {
+    padding: 2% 0 4%;
+    width: 80%;
+    height: 90%;
+    text-align: center;
+  }
+
+  #shopdetail .about p {
+    font-size: 17px;
+    text-align: left;
+  }
+
+  #shopdetail .menu .menuWrapper {
+    display: block;
+    width: 76vw;
+    padding: 3% 5%;
+  }
+
+  #shopdetail .menu .menu-list {
+    width: 100%;
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  #shopdetail .menu .menu-list p {
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 26px;
+    line-height: 44px;
+    text-align: center;
+  }
+
+  #shopdetail .menu .menu-list ul li {
+    padding-left: 0px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  #shopdetail .menu .etc {
+    font-size: 22px;
+  }
+
+  #shopdetail .comment .commentWrapper {
+    display: block;
+    width: 95%;
+    padding: 0 5%;
+  }
+
+  #shopdetail .comment .comment-txt {
+    width: 100%;
+    font-size: 17px;
+    line-height: 32px;
+  }
+
+  #shopdetail .comment .comment-img {
+    width: 85%;
+    margin: 5.5vw auto 0;
+  }
+
+  #shopdetail .locationWrapper {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    padding-top: 50px;
+  }
+
+  #shopdetail .location-map {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #shopdetail .location-map iframe {
+    width: 100%;
+  }
+
+  #shopdetail table {
+    width: 100%;
+    margin-right: 70px;
+    font-size: 17px;
+    line-height: 36px;
+    transform: rotate(0.001deg);
+  }
+
+  #shopdetail table th {
+    width: 180px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  #shopdetail table td {
+    width: calc(95vw - 180px);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    height: 56px;
+    padding: 0 2%;
+  }
+
+  header .logo img {
+    height: 56px;
+  }
+
+  .global-nav {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: -100vw;
+    padding: 100px 0;
+    text-align: center;
+    font-size: 1.4em;
+    border-radius: 0px;
+    line-height: 35px;
+  }
+
+  .global-nav ul {
+    width: 100%;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 4px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .hamburger-line {
+    position: absolute;
+    left: 12px;
+    width: 24px;
+  }
+
+  .hamburger-line-top {
+    top: 16px;
+  }
+
+  .hamburger-line-middle {
+    top: 24px;
+  }
+
+  .hamburger-line-bottom {
+    top: 32px;
+  }
+
+  .nav-open .global-nav {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .nav-open .hamburger {
+    position: fixed;
+    top: 4px;
+    right: 16px;
+  }
+
+  .nav-open .hamburger-line-top {
+    top: 24px;
+  }
+
+  .nav-open .hamburger-line-middle {
+    width: 0;
+    left: 50%;
+  }
+
+  .nav-open .hamburger-line-bottom {
+    top: 24px;
+  }
+
+  #modal {
+    top: 5%;
+    bottom: 0;
+    right: 0;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+  }
+
+  #modal .crossWrapper {
+    margin-right: 18px;
+    font-size: 32px;
+    text-align: right;
+  }
+
+  #modal h3 {
+    font-size: 20px;
+  }
+
+  #modal h3:after {
+    width: 100px;
+    margin: 10px auto;
+    height: 6px;
+  }
+
+  #modal .contentsWrapper {
+    height: 60%;
+    padding: 0 12%;
+  }
+
+  #modal .contentsWrapper h4 {
+    font-size: 16px;
+  }
+
+  #modal .contentsWrapper p {
+    font-size: 13px;
+  }
+
+  #top {
+    height: 650px;
+  }
+
+  #top .tapi2,
+  .tapi10,
+  .tapi11 {
+    display: none;
+  }
+
+  #top .straw {
+    top: 20px;
+    right: 12px;
+    width: 60%;
+  }
+
+  #top .lid {
+    position: absolute;
+    top: 150px;
+    left: 10vw;
+    width: 80vw;
+    height: 22px;
+  }
+
+  #top .liquid {
+    top: 150px;
+    height: 500px;
+  }
+
+  #top .liquid-label {
+    width: 100%;
+  }
+
+  #top .liquid-box {
+    width: 60%;
+    min-width: 60%;
+    margin-bottom: 25px;
+    padding: 5px;
+  }
+
+  #shopdetail .headline {
+    position: relative;
+    width: 88vw;
+    height: 60vw;
+    margin: 45px auto 68vw auto;
+  }
+
+  #shopdetail .slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 60vw;
+    overflow: hidden;
+  }
+
+  #shopdetail .title {
+    position: absolute;
+    top: 60vw;
+    left: 10px;
+  }
+
+  #shopdetail .loc {
+    width: 11vw;
+    line-height: 40px;
+    font-size: 3.2vw;
+    margin: 5vw 0;
+    padding: 0px 1.5vw;
+  }
+
+  #shopdetail .name {
+    line-height: 7.6vw;
+    font-weight: bold;
+    font-size: 7.6vw;
+  }
+
+  #shopdetail .dots {
+    padding-top: 5vw;
+  }
+
+  .slick-dots li {
+    margin-right: 5vw;
+  }
+
+  .slick-dots li button:before {
+    font-size: 6vw;
+  }
+
+  #shopdetail .locationWrapper {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #top .tapi2,
+  .tapi8,
+  .tapi10,
+  .tapi11,
+  .tapi16,
+  .tapi17 {
+    display: none;
+  }
+
+  #top .straw {
+    transform-origin: top;
+    transform: scale(0.8, 0.8);
+  }
+
+  #introduce .introduceWrapper {
+    padding: 46px;
+    width: 80%;
+    min-width: 300px;
+  }
+
+  #introduce h3 {
+    font-size: 20px;
+  }
+
+  #introduce p {
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  #shopdetail .about,
+  .menu,
+  .comment,
+  .location {
+    margin: 85px auto;
+  }
+
+  #shopdetail .subhead {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+
+  #shopdetail .menu .menuWrapper {
+    width: 85vw;
+    padding: 2.5% 5%;
+  }
+
+  #shopdetail .menu .menu-list p {
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  #shopdetail .menu .menu-list ul li {
+    padding-left: 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #shopdetail table {
+    width: 100%;
+    margin-right: 70px;
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  #shopdetail table th {
+    width: 110px;
+  }
+
+  #shopdetail table td {
+    width: calc(95vw - 110px);
+  }
+}
+
+@media screen and (min-width: 480px) and (max-height: 700px) {
+  #top {
+    height: 800px;
+  }
+
+  #top .straw {
+    top: 0px;
+    right: 8%;
+  }
+
+  #top .lid {
+    position: absolute;
+    top: 180px;
+    left: 10vw;
+    width: 80vw;
+    height: 22px;
+  }
+
+  #top .liquid {
+    top: 180px;
+    height: 620px;
+  }
+
+  #top .liquid-label {
+    width: 100%;
+  }
+
+  #top .liquid-box {
+    width: 60%;
+    min-width: 60%;
+    margin-bottom: 25px;
+    padding: 5px;
+  }
+}

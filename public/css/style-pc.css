@@ -1,0 +1,913 @@
+@charset "UTF-8";
+
+/*-------------------------------
+ 	共通部分
+-------------------------------*/
+html {
+  font-size: 100%;
+  font-family: "Nunito", "Kosugi Maru", "DM Sans", "Yu Gothic Medium",
+    "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
+  line-height: 1.7;
+}
+body {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/*-------------------------------
+ 	ヘッダー
+-------------------------------*/
+header {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .logo {
+  height: 100%;
+}
+
+header .logo img {
+  height: 80px;
+}
+
+.global-nav {
+  background-color: rgba(253, 207, 215, 0.9);
+  width: 480px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -510px;
+  padding: 100px 0px 65px 80px;
+  font-size: 1.4em;
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: 700;
+  list-style: none;
+  line-height: 25px;
+  transition: all 0.6s;
+  z-index: 851;
+}
+
+.global-nav ul {
+  width: 80%;
+  list-style: none;
+}
+
+.global-nav ul li {
+  margin-bottom: 35px;
+  letter-spacing: 0.1em;
+  color: #333538;
+}
+
+.global-nav a:link {
+  color: #333538;
+}
+
+.global-nav a:visited {
+  color: #333538;
+}
+
+.global-nav .underline a {
+  text-decoration: none;
+}
+
+.global-nav .underline a::after {
+  border-bottom: solid 2px #333538;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all 0.5s ease;
+  width: 0;
+}
+
+.global-nav .underline a:hover::after {
+  width: 100%;
+}
+
+.global-nav ul li .sns-icon {
+  margin-right: 10px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: 65px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 860;
+  border: 1px solid #333538;
+  border-radius: 9999px;
+}
+
+.hamburger-line {
+  position: absolute;
+  left: 16px;
+  width: 28px;
+  height: 1px;
+  background-color: #333538;
+  transition: all 0.6s;
+}
+
+.hamburger-line-top {
+  top: 20px;
+}
+
+.hamburger-line-middle {
+  top: 30px;
+}
+
+.hamburger-line-bottom {
+  top: 40px;
+}
+
+.bg-hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 850;
+  visibility: hidden;
+  transition: all 0.7s;
+  cursor: pointer;
+}
+
+.nav-open .global-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.nav-open .hamburger {
+  position: fixed;
+  top: 10px;
+  right: 65px;
+}
+
+.nav-open .bg-hamburger {
+  visibility: visible;
+}
+
+.nav-open .hamburger-line-top {
+  transform: rotate(45deg);
+  top: 30px;
+}
+
+.nav-open .hamburger-line-middle {
+  width: 0;
+  left: 50%;
+}
+
+.nav-open .hamburger-line-bottom {
+  transform: rotate(-45deg);
+  top: 30px;
+}
+
+/* モーダル */
+#modal {
+  display: none;
+  position: fixed;
+  top: 10%;
+  bottom: 0;
+  right: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  text-align: center;
+  overflow-y: scroll;
+  z-index: 901;
+}
+
+#modal .crossWrapper {
+  margin-right: 36px;
+  font-size: 2.5em;
+  text-align: right;
+  z-index: 902;
+}
+
+#modal .cross {
+  cursor: pointer;
+}
+
+#modal h3 {
+  font-size: 1.7em;
+}
+
+#modal h3:after {
+  display: block;
+  width: 100px;
+  margin: 10px auto;
+  background-color: rgb(216, 216, 216);
+  border-radius: 5px;
+  content: "";
+  height: 9px;
+}
+
+#modal .contentsWrapper {
+  height: 60%;
+  padding: 0 12%;
+  text-align: left;
+  transform: rotate(0.001deg);
+}
+
+#modal .contentsWrapper h4 {
+  margin-top: 15px;
+  font-size: 1.2em;
+}
+
+#modal .contentsWrapper p {
+  margin-bottom: 30px;
+}
+
+.bg-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 900;
+}
+
+/*-------------------------------
+ 	TOPページ
+-------------------------------*/
+#top {
+  margin: 0 auto;
+  height: calc(100vh - 80px);
+  text-anchor: middle;
+}
+
+#top .top-tapioca {
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  background-color: rgba(140, 231, 228, 0.7);
+}
+
+#top .straw {
+  position: absolute;
+  top: -5px;
+  right: 20%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#top .straw img {
+  width: 350px;
+}
+
+#top .lid {
+  position: absolute;
+  top: 170px;
+  left: 10vw;
+  width: 80vw;
+  height: 22px;
+  background-color: rgb(252, 252, 252);
+}
+
+#top .liquid {
+  display: flex;
+  position: relative;
+  top: 174px;
+  bottom: 0;
+  left: 10vw;
+  width: 80vw;
+  height: calc(100vh - 254px);
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+#top svg {
+  position: absolute;
+  height: 100%;
+  width: 80vw;
+  min-width: 80vw;
+}
+
+#top .liquid-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#top .liquid-box {
+  width: 23%;
+  min-width: 300px;
+  margin-bottom: 25px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 1;
+}
+
+#top .tapi-particles-bottom {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80vw;
+  overflow: hidden;
+}
+
+#top .tapi-particles-top {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 0 70px 40px;
+  width: 80vw;
+  height: 100%;
+  overflow: hidden;
+}
+
+#top .tapi1 {
+  padding-bottom: 15px;
+}
+
+#top .scrolldown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  text-align: center;
+  line-height: 25px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: white;
+}
+
+#top .scroll {
+  cursor: pointer;
+}
+
+#top .scroll-mark {
+  margin-bottom: 7px;
+  font-weight: 500;
+  font-size: 2.2em;
+  transform: scale(1.2, 0.6);
+}
+
+#introduce {
+  width: 98vw;
+  margin: 0 auto;
+  padding: 80px 0;
+  text-align: center;
+  background-color: white;
+  transform: rotate(0.001deg);
+}
+
+#introduce .introduceWrapper {
+  margin: 30px auto 20px auto;
+  padding: 60px 0;
+  width: 60%;
+  min-width: 780px;
+  height: 90%;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0px 0px 0px 10px rgb(245, 245, 245);
+  border: dashed 3px white;
+}
+
+#introduce h3 {
+  margin-bottom: 40px;
+  font-size: 1.8em;
+}
+
+#introduce h3:after {
+  display: block;
+  width: 100px;
+  margin: 10px auto;
+  background-color: rgb(177, 220, 247);
+  border-radius: 5px;
+  content: "";
+  height: 9px;
+}
+
+#introduce p {
+  font-size: 19px;
+  line-height: 38px;
+}
+
+#introduce p .marker {
+  text-emphasis-style: dot filled;
+  -moz-text-emphasis-style: dot filled;
+  -ms-text-emphasis-style: dot filled;
+  -webkit-text-emphasis-style: dot filled;
+}
+
+#shoplist {
+  display: flex;
+  width: 82%;
+  margin: 0 auto;
+}
+
+#shoplist .shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#shoplist .shop-heart1 {
+  position: absolute;
+  margin-top: 40px;
+  min-width: 120px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 4em;
+  color: rgb(145, 203, 240);
+}
+
+#shoplist .shop-desc {
+  text-align: center;
+}
+
+#shoplist .shop-desc p {
+  margin: 0;
+  padding: 0;
+  transform: rotate(0.001deg);
+}
+
+#shoplist .shop-desc1 {
+  display: inline-block;
+  position: relative;
+  min-width: 120px;
+  max-width: 100%;
+  margin: 1.5em auto;
+  padding: 10px 15px;
+  color: rgb(145, 203, 240);
+  font-size: 1.1em;
+  background: #fff;
+  border: solid 3px rgb(145, 203, 240);
+  box-sizing: border-box;
+  border-radius: 15px;
+  visibility: hidden;
+}
+
+#shoplist .shop1:hover > i {
+  visibility: hidden;
+}
+
+#shoplist .shop1:hover > div {
+  visibility: visible;
+  color: #fff;
+  background: rgb(145, 203, 240);
+}
+
+#shoplist .shop1:hover > .shop-name {
+  text-decoration: underline;
+}
+
+#shoplist .shop1:hover > div::before {
+  border-top: 12px solid rgb(145, 203, 240);
+}
+
+#shoplist .shop-desc1:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid rgb(145, 203, 240);
+  z-index: 1;
+}
+
+#shoplist .shop-heart2 {
+  position: absolute;
+  margin-top: 40px;
+  min-width: 120px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 4em;
+  color: rgb(255, 192, 203);
+}
+
+#shoplist .shop-desc2 {
+  display: inline-block;
+  position: relative;
+  margin: 1.5em auto;
+  padding: 10px 15px;
+  min-width: 120px;
+  max-width: 100%;
+  color: rgb(255, 192, 203);
+  font-size: 1.1em;
+  background: #fff;
+  border: solid 3px rgb(255, 192, 203);
+  box-sizing: border-box;
+  border-radius: 15px;
+  visibility: hidden;
+}
+
+#shoplist .shop2:hover > div {
+  visibility: visible;
+  color: #fff;
+  background: rgb(255, 192, 203);
+}
+
+#shoplist .shop2:hover > .shop-name {
+  text-decoration: underline;
+}
+
+#shoplist .shop2:hover > div::before {
+  border-top: 12px solid rgb(255, 192, 203);
+}
+
+#shoplist .shop-desc2:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid rgb(255, 192, 203);
+  z-index: 1;
+}
+
+#shoplist .shop-heart3 {
+  position: absolute;
+  margin-top: 40px;
+  min-width: 120px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 4em;
+  color: rgb(251, 217, 101);
+}
+
+#shoplist .shop-desc3 {
+  display: inline-block;
+  position: relative;
+  margin: 1.5em auto;
+  padding: 10px 15px;
+  min-width: 120px;
+  max-width: 100%;
+  color: rgb(251, 217, 101);
+  font-size: 1.1em;
+  background: #fff;
+  border: solid 3px rgb(251, 217, 101);
+  box-sizing: border-box;
+  border-radius: 15px;
+  visibility: hidden;
+}
+
+#shoplist .shop3:hover > div {
+  visibility: visible;
+  color: #fff;
+  background: rgb(251, 217, 101);
+}
+
+#shoplist .shop3:hover > .shop-name {
+  text-decoration: underline;
+}
+
+#shoplist .shop3:hover > div::before {
+  border-top: 12px solid rgb(251, 217, 101);
+}
+
+#shoplist .shop-desc3:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid rgb(251, 217, 101);
+  z-index: 1;
+}
+
+#shoplist .shop-image {
+  margin: 0 auto;
+}
+
+#shoplist .shop-image img {
+  height: 450px;
+}
+
+#shoplist .shop-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin: 8px 0 10px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#shoplist .shop-loc {
+  text-align: center;
+  line-height: 35px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+#shoplist .shop-loc1 {
+  padding: 0px 15px;
+  border-radius: 7px;
+  background-color: rgb(145, 203, 240);
+}
+
+#shoplist .shop-loc2 {
+  padding: 0px 15px;
+  border-radius: 7px;
+  background-color: rgb(255, 192, 203);
+}
+
+#shoplist .shop-loc3 {
+  padding: 0px 15px;
+  border-radius: 7px;
+  background-color: rgb(251, 217, 101);
+}
+
+.scrolltop {
+  margin: 100px 10px 10px 0;
+  text-align: right;
+}
+
+.scrolltop-mark {
+  font-size: 2.7em;
+  cursor: pointer;
+}
+
+.scrolltop-mark:hover {
+  opacity: 0.7;
+}
+
+/*-------------------------------
+ 	ショップ詳細ページ
+-------------------------------*/
+#shopdetail .headline {
+  position: relative;
+  width: 82vw;
+  height: 32vw;
+  margin: 45px auto 50px;
+  background-color: rgb(245, 245, 245);
+}
+
+#shopdetail .slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48vw;
+  height: 32vw;
+  overflow: hidden;
+}
+
+#shopdetail .slider img {
+  transform: scale(1) rotate(0.001deg);
+}
+
+#shopdetail .zoom img {
+  transform-origin: center center;
+  transform: scale(1.1) rotate(0.001deg);
+  transition: 4s ease-out;
+}
+
+#shopdetail .dots {
+  padding-top: 42px;
+}
+
+#shopdetail .title {
+  position: absolute;
+  top: 8vw;
+  left: 70px;
+  width: 82vw;
+  z-index: 800;
+}
+
+#shopdetail .loc {
+  width: 73px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding: 0px 15px;
+  border-radius: 7px;
+}
+
+#shopdetail .loc1 {
+  background-color: rgb(145, 203, 240);
+}
+
+#shopdetail .loc2 {
+  background-color: rgb(255, 192, 203);
+}
+
+#shopdetail .loc3 {
+  background-color: rgb(251, 217, 101);
+}
+
+#shopdetail .name {
+  line-height: 65px;
+  font-weight: bold;
+  font-size: 42px;
+}
+
+#shopdetail .about,
+.menu,
+.comment,
+.location {
+  width: 82vw;
+  margin: 140px auto;
+}
+
+#shopdetail .subhead {
+  margin-bottom: 55px;
+  font-weight: normal;
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 3px 3px 0 rgba(94, 94, 94, 0.07);
+}
+
+#shopdetail .about .subhead span {
+  padding: 0 15px;
+  background: rgb(255, 192, 203);
+}
+
+#shopdetail .about .aboutWrapper {
+  margin: 0 auto;
+  padding: 0 5%;
+  width: 95%;
+  height: 90%;
+  text-align: center;
+  transform: rotate(0.001deg);
+}
+
+#shopdetail .about p {
+  font-size: 19px;
+  line-height: 28px;
+}
+
+#shopdetail .about p .marker {
+  background: linear-gradient(transparent 0, rgba(255, 192, 203, 0.6) 0);
+}
+
+#shopdetail .menu .subhead span {
+  padding: 0 15px;
+  background: rgb(145, 203, 240);
+}
+
+#shopdetail .menu .menuWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 68vw;
+  margin: 0 auto calc(95px + 2%);
+  padding: 3% 5%;
+  border: solid 2px #333538;
+}
+
+#shopdetail .menu .menu-list {
+  display: inline-block;
+  width: 50%;
+  padding: 30px 0;
+  transform: rotate(0.001deg);
+}
+
+#shopdetail .menu .menu-list p {
+  width: 90%;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 44px;
+  border-bottom: dotted 2px #333538;
+}
+
+#shopdetail .menu .menu-list ul li {
+  padding-left: 20px;
+  font-size: 19px;
+}
+
+#shopdetail .menu .etc {
+  width: 100%;
+  font-size: 22px;
+  text-align: right;
+}
+
+#shopdetail .comment .subhead span {
+  padding: 0 15px;
+  background: rgb(251, 217, 101);
+}
+
+#shopdetail .comment .commentWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 5%;
+  transform: rotate(0.001deg);
+}
+
+#shopdetail .comment .comment-txt {
+  width: 55%;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+#shopdetail .comment .comment-img {
+  width: 33%;
+  margin-top: 5.5vw;
+}
+
+#shopdetail .location .subhead span {
+  padding: 0 15px;
+  background: rgb(151, 221, 206);
+}
+
+#shopdetail .locationWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+#shopdetail table {
+  margin-right: 70px;
+  font-size: 18px;
+  line-height: 45px;
+  transform: rotate(0.001deg);
+}
+
+#shopdetail table th {
+  width: 120px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/*-------------------------------
+ 	フッター
+-------------------------------*/
+footer {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-weight: 500;
+  color: #333538;
+}
+
+footer hr {
+  border: none;
+  height: 10px;
+  background-color: white;
+  background-image: url(../images/footer-mark.png);
+  background-position: center bottom -1px;
+  background-repeat: repeat-x;
+}
+
+footer .page-footer {
+  margin: 0 auto;
+  padding: 15px 4%;
+  background-color: rgb(139, 231, 228);
+}
+
+footer p {
+  padding-top: 15px;
+  font-size: 1.5em;
+}
+
+footer .sns-icon {
+  font-size: 2em;
+  margin: 5px 10px 15px;
+}
+
+footer a:link {
+  color: #333538;
+}
+
+footer a:visited {
+  color: #333538;
+}
+
+footer a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
